@@ -9,7 +9,7 @@ server.on('connection', (socket) => {
     socket.on('message', (message) => {
         try {
             const data = JSON.parse(message);
-            if (data.type === 'joystick') {
+            if (data.type === 'joystick' && data.id) {
                 sendToVigembus(data);
             }
             if (data.type === 'peer-disconnected') {
