@@ -1,7 +1,7 @@
 const WebSocket = require('ws');
 const { sendToVigembus, disconnectJoysticks } = require('./vigembus');
 
-const server = new WebSocket.Server({ port: 8080 });
+const server = new WebSocket.Server({ port: 8081 });
 
 server.on('connection', (socket) => {
     console.log('Client connected');
@@ -25,4 +25,4 @@ server.on('connection', (socket) => {
     });
 });
 
-console.log('WebSocket server is running on ws://localhost:8080');
+console.log('WebSocket server is running on ws://localhost:8081');
